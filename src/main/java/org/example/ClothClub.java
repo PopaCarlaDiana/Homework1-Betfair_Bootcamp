@@ -8,10 +8,6 @@ public class ClothClub implements Shop{
     private List<Cloth> clothList = new ArrayList<>();
     private Float profit=(float)0;
 
-    public ClothClub(List<Cloth> list){
-        clothList.addAll(list);
-    }
-
     @Override
     public void showAllClothes() {
         for(Cloth cloth:clothList){
