@@ -1,5 +1,3 @@
-package org.example;
-
 import java.util.Objects;
 
 /**
@@ -21,6 +19,22 @@ public class Cloth { // only getters and no public constructor
         this.season=builder.season;
         this.material=builder.material;
         this.isLimitedEdition=builder.isLimitedEdition;
+    }
+
+    @Override
+    public String toString() {
+        String string = "";
+        string+=nameOfCloth+" size="+size+" price="+price+"$ ";
+        if(season!=null){
+            string+=season+" ";
+        }
+        if(material!=null){
+            string+=material+" ";
+        }
+        if(isLimitedEdition!=null&&isLimitedEdition==true){
+            string+="Is Limited Edition!";
+        }
+        return string;
     }
 
     public String getNameOfCloth() {

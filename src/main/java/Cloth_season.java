@@ -1,5 +1,3 @@
-package org.example;
-
 public enum Cloth_season {
     SUMMER_SEASON,
     SPRING_SEASON,

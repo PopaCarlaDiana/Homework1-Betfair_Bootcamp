@@ -1,5 +1,3 @@
-package org.example;
-
 public enum Cloth_material {
 
     COTTON,
@@ -12,5 +10,4 @@ public enum Cloth_material {
     VELVET,
     WOOL,
     ;
-
 }

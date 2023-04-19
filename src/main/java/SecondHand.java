@@ -1,9 +1,7 @@
-package org.example;
-
 import java.util.ArrayList;
 import java.util.List;
 
-public class RoundRockCloth implements Shop{
+public class SecondHand implements Shop{
 
     private List<Cloth> clothList = new ArrayList<>();
     private Float profit=(float)0;
@@ -11,15 +9,9 @@ public class RoundRockCloth implements Shop{
     @Override
     public void showAllClothes() {
         for(Cloth cloth:clothList){
-            System.out.println("Cloth{" +
-                    "nameOfCloth='" + cloth.getNameOfCloth() + '\'' +
-                    ", size=" + cloth.getSize() +
-                    ", price=" + cloth.getPrice() +
-                    ", season=" + cloth.getSeason() +
-                    ", material=" + cloth.getMaterial() +
-                    ", isLimitedEdition=" + cloth.getLimitedEdition() +
-                    '}'+"\n");
+            System.out.println(cloth.toString());
         }
+        System.out.println();
     }
 
     @Override
@@ -36,6 +28,18 @@ public class RoundRockCloth implements Shop{
         }
     }
 
+    @Override
+    public Cloth buyCloth(String name, Integer size) throws Exception {
+        for(Cloth cloth:this.clothList){
+            if(cloth.getNameOfCloth().equals(name) && cloth.getSize().equals(size)){
+                Cloth cloth1 = cloth;
+                this.clothList.remove(cloth);
+                return cloth;
+            }
+        }
+        throw new Exception("The cloth does not exist");
+    }
+
     public List<Cloth> getClothList() {
         return clothList;
     }
@@ -43,5 +47,4 @@ public class RoundRockCloth implements Shop{
     public Float getProfit() {
         return profit;
     }
-
 }
